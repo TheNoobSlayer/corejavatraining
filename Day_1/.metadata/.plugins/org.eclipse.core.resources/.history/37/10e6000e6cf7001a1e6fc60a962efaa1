@@ -1,0 +1,8 @@
+package com.training;
+
+public class DonorDetails {
+	private String name;
+	private int age;
+	private int weight;
+	private String gender;
+}

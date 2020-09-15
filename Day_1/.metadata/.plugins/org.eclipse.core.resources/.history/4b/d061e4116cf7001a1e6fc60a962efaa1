@@ -1,0 +1,15 @@
+package com.training;
+
+public class DonorDetails {
+	private String name;
+	private int age;
+	private int weight;
+	private String gender;
+	public DonorDetails(String name, int age, int weight, String gender) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.weight = weight;
+		this.gender = gender;
+	}
+}
