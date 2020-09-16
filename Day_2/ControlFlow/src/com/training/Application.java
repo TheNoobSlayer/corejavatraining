@@ -23,7 +23,8 @@ public class Application {
 		mgr.showProductsLegacy(productList);
 		Product[] newArray=mgr.calculateDiscount(productList);
 		for(Product eachProduct:newArray) {
-			System.out.println(eachProduct.getProductName()+" discount= "+eachProduct.getDiscount());
+			double price=eachProduct.getRatePerUnit()-(eachProduct.getRatePerUnit()*eachProduct.getDiscount());
+			System.out.println(eachProduct.getProductName()+" discount= "+eachProduct.getDiscount()+" Price="+price);
 		}
 	}
 
