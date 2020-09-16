@@ -1,11 +1,11 @@
-package training;
+package com.training;
 
 public class Insurance {
 
 	private int policyNumber;
 	private String policyHolderName;
 	private int age;
-	private int InsuredAmount;
+	private int insuredAmount;
 	
 	public Insurance(int policyNumber, String policyHolderName, int age) {
 		super();
@@ -19,7 +19,7 @@ public class Insurance {
 		this.policyNumber = policyNumber;
 		this.policyHolderName = policyHolderName;
 		this.age = age;
-		InsuredAmount = insuredAmount;
+		this.insuredAmount = insuredAmount;
 	}
 
 	public int getPolicyNumber() {
@@ -47,19 +47,19 @@ public class Insurance {
 	}
 
 	public int getInsuredAmount() {
-		return InsuredAmount;
+		return insuredAmount;
 	}
 
 	public void setInsuredAmount(int insuredAmount) {
-		InsuredAmount = insuredAmount;
+		this.insuredAmount = insuredAmount;
 	}
 	
 	public double calculatePremium() {
 		double premium=0;
 		if(this.age<25) {
-			premium=0.6*this.InsuredAmount;
+			premium=0.6*this.insuredAmount;
 		}else {
-			premium=0.7*this.InsuredAmount;
+			premium=0.7*this.insuredAmount;
 		}
 		return premium;
 	}

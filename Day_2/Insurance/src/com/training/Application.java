@@ -1,4 +1,4 @@
-package training;
+package com.training;
 
 public class Application {
 
@@ -8,7 +8,7 @@ public class Application {
 		double premiumCalculated=holderOne.calculatePremium();
 		System.out.println(holderOne.getPolicyHolderName()+"'s insured amount ="+premiumCalculated);
 		
-		Insurance holderTwo=new Insurance(123,"Bob",70,7000);
+		Insurance holderTwo=new Insurance(456,"Bob",70,7000);
 		premiumCalculated=holderTwo.calculatePremium();
 		System.out.println(holderTwo.getPolicyHolderName()+"'s insured amount ="+premiumCalculated);
 	}
