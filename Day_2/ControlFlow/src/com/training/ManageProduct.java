@@ -34,7 +34,7 @@ public class ManageProduct {
 				totalTax=(int)(rate*0.15);
 				return totalTax;
 			default:
-				totalTax=(int)(rate*0.05);
+				totalTax=(int)(rate*0.28);
 				return totalTax;
 		}
 			
