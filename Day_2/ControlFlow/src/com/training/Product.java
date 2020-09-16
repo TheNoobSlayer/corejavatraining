@@ -1,6 +1,11 @@
 package com.training;
 
-public class Product {
+public class Product extends Object{
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.productName+"."+this.ratePerUnit;
+	}
 	private int productId;
 	private String productName;
 	private double ratePerUnit;

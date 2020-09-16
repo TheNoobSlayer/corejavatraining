@@ -46,7 +46,8 @@ public class ManageProduct {
 	
 	public void showProductsLegacy(Product[] productList) {
 		for(int i=0;i<productList.length;i++) {
-			System.out.println("Product :"+i+"=>"+productList[i].getProductName());
+			//System.out.println("Product :"+i+"=>"+productList[i].getProductName());
+			System.out.println(productList[i]);
 		}
 	}
 	
