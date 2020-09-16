@@ -16,7 +16,7 @@ public class Application {
 		premiumCalculated=holderThree.calculatePremium();
 		System.out.println(holderThree.getPolicyHolderName()+"'s insured amount for "+holderThree.getVehicleModel()+" wheeler="+premiumCalculated);
 		
-		VehicleInsurance holderFour=new VehicleInsurance(789,"Aditya",10,8000,4,2010,1000000);
+		VehicleInsurance holderFour=new VehicleInsurance(789,"Aditya",10,8000,4,2019,1000000);
 		premiumCalculated=holderFour.calculatePremium();
 		System.out.println(holderFour.getPolicyHolderName()+"'s insured amount for "+holderFour.getVehicleModel()+" wheeler="+premiumCalculated);
 	

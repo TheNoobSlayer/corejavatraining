@@ -1,4 +1,5 @@
 package com.training;
+import java.util.Date;  
 
 public class VehicleInsurance extends Insurance {
 	
@@ -32,16 +33,20 @@ public class VehicleInsurance extends Insurance {
 	}
 	@Override
 	public double calculatePremium() {
+		Date d=new Date();  
+        @SuppressWarnings("deprecation")
+		int year=d.getYear();
+        year=year+1900;
 		// TODO Auto-generated method stub
 		double premium=0.0f;
 		if(this.vehicleModel==2) {
-			if(2020-this.yearOfModel<2) {
+			if(year-this.yearOfModel<2) {
 				premium=0.5*this.getInsuredAmount();
 			}else {
 				premium=0.6*this.getInsuredAmount();
 			}
 		}else if(this.vehicleModel==4) {
-			if(2020-this.yearOfModel<2) {
+			if(year-this.yearOfModel<2) {
 				premium=0.4*this.getInsuredAmount();
 			}else {
 				premium=0.5*this.getInsuredAmount();
