@@ -1,5 +1,6 @@
 package com.training.example.two;
 
+
 import com.training.ifaces.Automobile;
 
 public class ShowRoom {

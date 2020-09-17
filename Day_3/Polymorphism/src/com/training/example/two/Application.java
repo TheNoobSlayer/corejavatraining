@@ -13,16 +13,16 @@ public class Application {
 		while(true){
 			key=sc.nextInt();
 			if(key==0) {
-				break;
+				System.exit(0);;
 			}
 			Automobile selected=saiCars.getProduct(key);
 			if(selected!=null) {
 				saiCars.printEstimate(selected);
 			}else {
-				System.out.println("Wrong Option. Should be 1 or 2");
+				System.out.println("Wrong Option. Should be 1 or 2 or 3");
 			}
 		}
-		sc.close();
+		//sc.close();
 		
 		
 	}
