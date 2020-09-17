@@ -11,7 +11,7 @@ public class Computer implements Product {
 	@Override
 	public String getModel() {
 		// TODO Auto-generated method stub
-		return "DELL 5577";
+		return "DELL-5577";
 	}
 
 	@Override

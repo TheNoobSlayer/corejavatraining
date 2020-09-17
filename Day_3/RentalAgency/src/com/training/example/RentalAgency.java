@@ -24,12 +24,13 @@ public class RentalAgency {
 		System.out.println(polyProduct.getPrice());
 	}
 	
-	public int getPerDayRent(Product polyProduct) {
+	public int getPerDayRent(Product polyProduct,int noOfDays,int quantity) {
 		int totalRent = 0;
-		totalRent+= polyProduct.perDayRent();
+		int perTotalProduct=polyProduct.perDayRent()*noOfDays*quantity;
+		totalRent+= perTotalProduct;
 		return totalRent;
 	}
-	public String getName(Product polyProduct) {
+	public String getModel(Product polyProduct) {
 		return polyProduct.getModel();
 	}
 }
