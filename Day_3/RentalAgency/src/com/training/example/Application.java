@@ -16,22 +16,38 @@ public class Application {
 		RentalAgency saiAccesories=new RentalAgency();
 		Scanner sc=new Scanner(System.in);
 		while(true){
+			System.out.println("What do you wish to buy?");
+			System.out.println("1: Computer");
+			System.out.println("2: Furniture");
 			key=sc.nextInt();
-			if(key==0) {
-				break;
-			}
+			
 			Product selected=saiAccesories.getProduct(key);
 			if(selected!=null) {
+				
 				System.out.println("For how many days? ");
 				int noOfdays=sc.nextInt();
-				System.out.println("For how many of them? ");
+				
+				System.out.println("How many of them? ");
 				int quantity=sc.nextInt();
+				
 				saiAccesories.printEstimate(selected);
-				cart.add(saiAccesories.getModel(selected));
+				for(int i=0;i<quantity;i++) {
+					cart.add(saiAccesories.getModel(selected));
+				}
+				
 				totalBill=totalBill+saiAccesories.getPerDayRent(selected,noOfdays,quantity);
 				
 			}else {
 				System.out.println("Wrong Option. Should be 1 or 2 and 0 to exit");
+			}
+			
+			System.out.println("Keep Buying?");
+			System.out.println("1: Yes");
+			System.out.println("0: No");
+			int exit=sc.nextInt();
+			
+			if(exit==0) {
+				break;
 			}
 		}
 		System.out.print("Cart= ");

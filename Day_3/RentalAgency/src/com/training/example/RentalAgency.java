@@ -22,12 +22,14 @@ public class RentalAgency {
 		System.out.println(polyProduct.getColor());
 		System.out.println(polyProduct.getModel());
 		System.out.println(polyProduct.getPrice());
+		System.out.println(polyProduct.perDayRent());
+
 	}
 	
 	public int getPerDayRent(Product polyProduct,int noOfDays,int quantity) {
 		int totalRent = 0;
-		int perTotalProduct=polyProduct.perDayRent()*noOfDays*quantity;
-		totalRent+= perTotalProduct;
+		int perProductTotal=polyProduct.perDayRent()*noOfDays*quantity;
+		totalRent=totalRent+ perProductTotal;
 		return totalRent;
 	}
 	public String getModel(Product polyProduct) {
