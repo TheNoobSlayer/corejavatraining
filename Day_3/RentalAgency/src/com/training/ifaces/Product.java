@@ -6,4 +6,5 @@ public interface Product {
 	public String getModel();
 	double getPrice();
 	int perDayRent();
+	int calRent(int noOfDays,int quantity);
 }

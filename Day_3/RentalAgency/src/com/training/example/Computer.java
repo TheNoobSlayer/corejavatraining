@@ -25,6 +25,14 @@ public class Computer implements Product {
 		// TODO Auto-generated method stub
 		return 4000;
 	}
+
+	@Override
+	public int calRent(int noOfDays,int quantity) {
+		// TODO Auto-generated method stub
+		int perProductTotal=this.perDayRent()*noOfDays*quantity;
+		return perProductTotal;
+	}
+	
 	
 
 }

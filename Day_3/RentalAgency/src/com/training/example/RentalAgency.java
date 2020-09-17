@@ -28,8 +28,7 @@ public class RentalAgency {
 	
 	public int getPerDayRent(Product polyProduct,int noOfDays,int quantity) {
 		int totalRent = 0;
-		int perProductTotal=polyProduct.perDayRent()*noOfDays*quantity;
-		totalRent=totalRent+ perProductTotal;
+		totalRent=totalRent+ polyProduct.calRent(noOfDays, quantity);
 		return totalRent;
 	}
 	public String getModel(Product polyProduct) {

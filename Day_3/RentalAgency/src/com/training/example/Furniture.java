@@ -28,4 +28,12 @@ public class Furniture implements Product {
 		return 10000;
 	}
 
+	@Override
+	public int calRent(int noOfDays, int quantity) {
+		// TODO Auto-generated method stub
+		int perProductTotal=this.perDayRent()*noOfDays*quantity;
+		return perProductTotal;
+	}
+
+	
 }
