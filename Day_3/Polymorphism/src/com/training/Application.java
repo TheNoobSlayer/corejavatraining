@@ -10,6 +10,10 @@ public class Application {
 		Billing bill=new Billing();
 		bill.printFees(sharma);
 		bill.printFees(rajesh);
+		WrapperAndStatic obj=new WrapperAndStatic();
+		obj.parseStrNumber("12345");
+		System.out.println(obj.useStrNumber(5622).length());
+		System.out.println(obj.useValueOf());
 	}
 
 }
