@@ -46,7 +46,7 @@ public class Book {
 			} catch (NullPointerException e) {
 				// TODO: handle exception
 				throw new MyCustomException(NULL_ERR_MESSAGE, e);
-			}
+			} 
 		
 		this.bookName = bookName;
 	}

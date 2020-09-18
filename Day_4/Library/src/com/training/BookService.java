@@ -3,18 +3,14 @@ import java.util.*;
 
 public class BookService {
 	ArrayList<Book> cart=new ArrayList<Book>();
-	public boolean addBook(Book book) {
-		
-		if(cart.add(book)) {
-			return true;
-		}else {
-			return false;
-		}
-		
+	Book[] myCart=new Book[5];
+	
+	public void addBook(Book book) {		
+			myCart[book.getBookId()]=book;	
 	}
 	
 	public void getOne(Book book) {
-		if(cart.contains(book)) {
+		if(myCart[book.getBookId()]!=null) {
 			System.out.println();
 			System.out.print("Name: "+book.getBookName()+", ");
 			System.out.print("Id: "+book.getBookId()+", ");
@@ -27,12 +23,12 @@ public class BookService {
 	
 	public void getAll() {
 		
-		for(Book oneBook:cart) {
+		for(int i=0;i<myCart.length;i++) {
 			System.out.println();
-			System.out.print("Name: "+oneBook.getBookName()+", ");
-			System.out.print("Id: "+oneBook.getBookId()+", ");
-			System.out.print("Written by: "+oneBook.getAuthor()+", ");
-			System.out.print("Price: "+oneBook.getBookName()+", ");
+			System.out.print("Name: "+myCart[i].getBookName()+", ");
+			System.out.print("Id: "+myCart[i].getBookId()+", ");
+			System.out.print("Written by: "+myCart[i].getAuthor()+", ");
+			System.out.print("Price: "+myCart[i].getBookName()+", ");
 		}
 		
 		
