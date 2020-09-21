@@ -93,28 +93,34 @@ public class CreditCardService {
 		return persisted;
 	}
 	
-	public CreditCard retrieveCardWithDataStream(File file) {
-		CreditCard card=new CreditCard();
-		DataInputStream data=null;
-		BufferedReader br=null;
+	public CreditCard[] retrieveCardWithDataStream(File file) {
+		CreditCard [] cards = new CreditCard[5];
+		int index = 0;
+		BufferedReader reader = null;
 		try {
-			FileInputStream fileInputStream=new FileInputStream(file);
-			
-			br=new BufferedReader(new FileReader(file));
-			String line=null;
-			while((line = br.readLine())!=null) {
-				System.out.println(line);
-				String[] arr=line.split(",");
+			reader = new BufferedReader(new FileReader(file));
+			String details = null;
+			while((details=reader.readLine())!=null) {
+				String[] result = details.split("[,]", 0);
+				CreditCard card = new CreditCard();
+				card.setCardNumber(Integer.parseInt(result[0]));
+				card.setCardHolderName(result[1]);
 				
-			}		
-			
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}catch(NullPointerException e) {
+				cards[index] = card;
+				index++;
+			}
+		} catch (NumberFormatException | IOException e) {
 			e.printStackTrace();
 		}
-		return card;
+		finally {
+			try {
+				reader.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return cards;
 	}
 	
 	public CreditCard[] deleteCard(CreditCard[] cards, String cardHolderName) {
