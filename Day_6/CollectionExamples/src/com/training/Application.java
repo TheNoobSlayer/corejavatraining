@@ -36,6 +36,8 @@ public class Application {
 		dao.update(rak, pam);
 		System.out.println("After Updation");
 		printList(invList);
+		System.out.println("Using findById");
+		System.out.println(dao.findById(102));
 		
 	}
 

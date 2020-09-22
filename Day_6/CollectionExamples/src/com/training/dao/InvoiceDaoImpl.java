@@ -29,6 +29,11 @@ public class InvoiceDaoImpl implements InvoiceDAO {
 	@Override
 	public Invoice findById(int id) {
 		// TODO Auto-generated method stub
+		for(Invoice eachInvoice:this.invList) {
+			if(eachInvoice.getInvoiceNumber()==id) {
+				return eachInvoice;
+			}
+		}
 		return null;
 	}
 
