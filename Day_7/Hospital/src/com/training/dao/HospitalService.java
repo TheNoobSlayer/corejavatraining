@@ -47,8 +47,13 @@ public class HospitalService implements Hospital {
 	}
 
 	@Override
-	public Collection<Patient> getPatient() {
+	public Patient getPatient(String patName) {
 		// TODO Auto-generated method stub
+		for(Patient eachPatient:this.patientList) {
+			if(eachPatient.getPatientName().equalsIgnoreCase(patName)) {
+				return eachPatient;
+			}
+		}
 		return null;
 	}
 
@@ -63,13 +68,14 @@ public class HospitalService implements Hospital {
 	public boolean addPatient(Doctor doc,Patient pat) {
 		// TODO Auto-generated method stub
 		
-		return this.appointments.addAppointment(doc, pat);
+		return this.appointments.addAppointment(doc,pat);
 	}
 
 	@Override
 	public boolean removeDoctor(Doctor doc) {
 		// TODO Auto-generated method stub
-		return false;
+		
+		return this.docList.remove(doc);
 	}
 
 	@Override

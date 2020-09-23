@@ -12,6 +12,12 @@ public class Appointments {
 	
 	
 	
+	public Appointments() {
+		super();
+		this.patients=new HashSet<Patient>();
+		this.appointments=new HashMap<>();
+	}
+
 	public HashSet<Patient> getPatients() {
 		return patients;
 	}

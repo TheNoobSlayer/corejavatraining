@@ -28,8 +28,8 @@ public class Application {
 		Doctor doc3=new Doctor("Dr Hofstater", 003);
 		
 		Patient pat1=new Patient("Aditya", 1000, 22, doc1);
-		Patient pat2=new Patient("Bo", 1001, 22, doc2);
-		Patient pat3=new Patient("Buu", 1002, 22, doc3);
+		Patient pat2=new Patient("Bo", 1001, 22, doc1);
+		Patient pat3=new Patient("Buu", 1002, 22, doc1);
 		
 		sayadri.addDoctor(doc1);
 		
@@ -37,6 +37,11 @@ public class Application {
 		sayadri.addPatient(doc1, pat1);
 		sayadri.addPatient(doc1, pat2);
 		sayadri.addPatient(doc1, pat3);
+		
+		System.out.println(sayadri.getAllDoctors());
+		System.out.println(sayadri.getPatient("Bo"));
+		System.out.println(sayadri.getAllPatients());
+		
 		
 		sayadri.removePatient(pat2);
 		sayadri.getAllAppointments();

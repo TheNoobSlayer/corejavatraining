@@ -10,7 +10,7 @@ public interface Hospital {
 	Collection<Doctor> getAllDoctors();
 	Collection<Doctor> getDoctor();
 	Collection<Patient> getAllPatients();
-	Collection<Patient> getPatient();
+	Patient getPatient(String patName );
 	boolean addDoctor(Doctor doc);
 	boolean addPatient(Doctor doc,Patient pat);
 	boolean removeDoctor(Doctor doc);
