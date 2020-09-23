@@ -18,26 +18,24 @@ public class Application {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Invoice ram=new Invoice(101, "Ramesh", 4500);
-		Invoice raj=new Invoice(102, "Rajesh", 5500);
-		Invoice rak=new Invoice(103, "Rakesh", 5500);
-		Invoice kam=new Invoice(104, "Kamesh", 6500);
-		Invoice pam=new Invoice(105, "Pamesh", 6500);
+		Invoice adi=new Invoice(102, "Aditya", 4500);
+		Invoice bo=new Invoice(104, "Bo", 5500);
+		Invoice chinu=new Invoice(101, "Chinu", 5500);
+		Invoice doke=new Invoice(105, "Doke", 6500);
+		Invoice esh=new Invoice(104, "Eshwar", 6500);
 		
 		InvoiceDAO dao=new InvoiceDaoImpl();
-		dao.add(ram);
-		dao.add(raj,rak,kam);
+		dao.add(doke);
+		dao.add(adi,esh,chinu,bo);
 		
-		Collection<Invoice> invList=dao.findAll();
-		printList(invList);
-		dao.remove(kam);
-		System.out.println("After deletion");
-		printList(invList);
-		dao.update(rak, pam);
-		System.out.println("After Updation");
-		printList(invList);
+		
 		System.out.println("Using findById");
 		System.out.println(dao.findById(102));
+		
+		System.out.println("Sorted by Customer Name");
+		printList(dao.sortedBy("Customer Name"));
+		System.out.println("Sorted by Invoice Number");
+		printList(dao.sortedBy("Invoice Number"));
 		
 	}
 

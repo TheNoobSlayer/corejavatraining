@@ -3,6 +3,8 @@ package com.training.dao;
 import java.util.*;
 import com.training.entity.Invoice;
 import com.training.ifaces.InvoiceDAO;
+import com.training.util.CustomerNameComparator;
+import com.training.util.InvoiceNumberComparator;
 
 public class InvoiceDaoImpl implements InvoiceDAO {
 	
@@ -64,6 +66,42 @@ public class InvoiceDaoImpl implements InvoiceDAO {
 		}
 		
 		return false;
+	}
+
+	@Override
+	public Collection<Invoice> sortedByInvoice() {
+		// TODO Auto-generated method stub
+		Collections.sort(this.invList);
+		return this.invList;
+	}
+
+	@Override
+	public Collection<Invoice> sortedByInvoiceNumber() {
+		// TODO Auto-generated method stub
+		InvoiceNumberComparator numComparator=new InvoiceNumberComparator();
+		Collections.sort(this.invList,numComparator);
+		return this.invList;
+	}
+
+	@Override
+	public Collection<Invoice> sortedByCustomerName() {
+		// TODO Auto-generated method stub
+		CustomerNameComparator nameComparator=new CustomerNameComparator();
+		Collections.sort(this.invList,nameComparator);
+		return this.invList;
+	
+	}
+
+	@Override
+	public Collection<Invoice> sortedBy(String propName) {
+		// TODO Auto-generated method stub
+		if(propName.equalsIgnoreCase("Customer Name")) {
+			return this.sortedByCustomerName();
+		}else if(propName.equalsIgnoreCase("Invoice Number")) {
+			return this.sortedByInvoiceNumber();
+		}
+		return null;
+		
 	}
 
 	
