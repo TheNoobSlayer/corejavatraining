@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="styles/style.css">
+<title>Show Invoices</title>
+<style type="text/css">
+img{
+	width: 100px;
+	height: 100px;
+	border:1px solid #A00Bff;
+}
+</style>
+ <h1>Registeration Form</h1>
+</head>
+<body>
+<header>
+<img src="images/logo.png" alt="Hanger">
+<h4 style="text-align :center;font-family:Arial;font-size:20px"></h4>
+</header>
+<section>
+
+<form action="AddInvoice.html method="post">
+	
+	<div>
+		<label>First Name</label>
+		<input type="text" name="firstName" required="required">
+	</div>
+	<div>
+		<label>Last Name</label>
+		<input type="text" name="lastName" required="required">
+	</div>
+	<div>
+		<label for="birthday">Birthday:</label>
+  		<input type="date" id="birthday" name="birthday">
+	</div>
+	<div>
+		<label for="email">Enter your email:</label>
+  		<input type="email" id="email" name="email">
+	</div>
+	<div>
+		<label for="city">Choose a city:</label>
+  		<select id="city" name="city">
+   		<option value="pune">Pune</option>
+    	<option value="nashik">Nashik</option>
+    	<option value="mumbai">Mumbai</option>
+    	<option value="banglore">Banglore</option>
+  		</select>
+  <input type="submit">
+	</div>
+	<div>
+		<label>Select your marital status</label><br>
+		<input type="radio" id="married" name="married" value="married">
+  		<label for="married">Married</label><br>
+  		<input type="radio" id="unmarried" name="unmarried" value="unmarried">
+  		<label for="unmarried">UnMarried</label><br>
+	</div>
+	<div>
+		<label>Select your interests</label><br>
+		<input type="checkbox" id="sports" name="sports" value="football">
+  		<label for="sports">Sports</label><br>
+  		<input type="checkbox" id="politics" name="politics" value="congress">
+  		<label for="politics">Politics</label><br>
+  		<input type="checkbox" id="music" name="music" value="classical">
+  		<label for="music">Music</label>
+	</div>
+	<div>
+		<textarea name="message" rows="10" cols="30">
+			The cat was playing in the garden.
+		</textarea> 
+	</div>
+	<div>
+		<label>Done?</label>
+		<input type="reset">
+		<input type="submit" value="Submit">
+	</div>
+	
+
+</form>
+
+
+</section>
+<footer>
+<hr>
+<p>Designed by Abhishek Infotech,Hinjewadi</p>
+<a href="mailTo:admin@abc.com">Mail me</a>
+<hr>
+
+</footer>
+</body>
+</html>

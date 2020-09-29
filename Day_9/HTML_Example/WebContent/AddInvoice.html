@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="styles/style.css">
+<title>Show Invoices</title>
+<style type="text/css">
+img{
+	width: 100px;
+	height: 100px;
+	border:1px solid #A00Bff;
+}
+</style>
+
+</head>
+<body>
+<header>
+<img src="images/logo.png" alt="Hanger">
+<h4 style="text-align :center;font-family:Arial;font-size:20px"></h4>
+</header>
+<section>
+
+<form action="AddInvoice.html method="post">
+	<div>
+		<label>Invoice Number</label>
+		<input type="text" name="firstName" required="required">
+	</div>
+	<div>
+		<label>Customer Name</label>
+		<input type="text" name="customerName" required="required">
+	</div>
+	<div>
+		<label>Amount</label>
+		<label for="vol">Volume (between 0 and 50):</label>
+  		<input type="range" id="vol" name="vol" min="0" max="50">
+	</div>
+	<div>
+		<label>Done?</label>
+		<input type="reset">
+		<input type="submit" value="Submit">
+	</div>
+	
+
+</form>
+
+<div>
+<a href="Register.html">New User</a>
+</div>
+
+</section>
+<footer>
+<hr>
+<p>Designed by Abhishek Infotech,Hinjewadi</p>
+<a href="mailTo:admin@abc.com">Mail me</a>
+<hr>
+
+</footer>
+</body>
+</html>
