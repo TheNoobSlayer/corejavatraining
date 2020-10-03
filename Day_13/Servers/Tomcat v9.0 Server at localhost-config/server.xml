@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Servlet_Example" path="/Servlet_Example" reloadable="true" source="org.eclipse.jst.jee.server:Servlet_Example"/><Context docBase="LoginExample" path="/LoginExample" reloadable="true" source="org.eclipse.jst.jee.server:LoginExample"/><Context docBase="InvoiceExample" path="/InvoiceExample" reloadable="true" source="org.eclipse.jst.jee.server:InvoiceExample"/><Context docBase="JSPExample" path="/JSPExample" reloadable="true" source="org.eclipse.jst.jee.server:JSPExample"/><Context docBase="JSP_Using_Tags" path="/JSP_Using_Tags" reloadable="true" source="org.eclipse.jst.jee.server:JSP_Using_Tags"/><Context docBase="JSP_Products_Example" path="/JSP_Products_Example" reloadable="true" source="org.eclipse.jst.jee.server:JSP_Products_Example"/><Context docBase="Day11_StudentsExample" path="/Day11_StudentsExample" reloadable="true" source="org.eclipse.jst.jee.server:Day11_StudentsExample"/><Context docBase="Json_Ajax_Examples" path="/Json_Ajax_Examples" reloadable="true" source="org.eclipse.jst.jee.server:Json_Ajax_Examples"/></Host>
+      <Context docBase="LibraryApplication" path="/LibraryApplication" reloadable="true" source="org.eclipse.jst.jee.server:LibraryApplication"/></Host>
     </Engine>
   </Service>
 </Server>

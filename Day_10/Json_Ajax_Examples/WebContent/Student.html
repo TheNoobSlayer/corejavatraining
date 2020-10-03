@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ajax Example</title>
+</head>
+<body>
+
+<label>Student Id</label>
+<input type="text" name="studentId" id="studentId"><span id="msg"></span>
+<label>Student Name</label>
+<input type="text" name="studentName" id="studentName">
+
+
+
+
+<input type="button" name="submit" value="submit" id="submit">
+<span id="para"></span>
+<script type="text/javascript">
+	var studentIdField=document.getElementById("studentId");
+	var submit=document.getElementById("submit");
+	var xhr=new XMLHttpRequest();
+	studentIdField.addEventListener('blur',function(){
+		//console.log(studentId);
+		
+		var studentId=document.getElementById("studentId");
+		var studentName=document.getElementById("studentName");
+		var id=studentId.value;
+		var url="StudentServlet?studentId="+id;
+		xhr.open("GET",url);
+		//xhr.open("POST",url);
+		xhr.send(null);
+		xhr.onreadystatechange=processRequest;
+		
+		//console.log(xhr);
+		//console.log(studentIdField.value);
+	});
+
+	submit.addEventListener('click',function(){
+		var studentName=document.getElementById("studentName");
+		var id=studentIdField.value;
+		var name=studentName.value;
+		var jsonValue1;
+		var url="StudentServlet";
+		xhr.onreadystatechange=function(){
+			var paraField=document.getElementById("para");
+			if(xhr.readyState==4 && xhr.status==200){
+				jsonValue1=JSON.parse(xhr.responseText);
+				paraField.innerHTML="Student Name "+jsonValue1.studentName+"<br>Student Id: "+jsonValue1.studentId;
+			}	
+		
+		}
+		xhr.open("POST",url,true);
+		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhr.send("studentId="+id+"&name="+name);
+		});
+		
+	
+	function processRequest(){
+		var msgField=document.getElementById("msg");
+		if(xhr.readyState==4 && xhr.status==200){
+			var resp=xhr.responseText.trim();
+			var value=JSON.parse(resp);
+			document.getElementById("studentName").value = value.studentName; 
+		}else{
+			msgField.innerHTML=xhr.responseText;
+		}
+	}
+	
+	
+	
+</script>
+</body>
+</html>
