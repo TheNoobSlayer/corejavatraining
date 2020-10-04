@@ -10,10 +10,12 @@ import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import com.training.entity.Member;
 import com.training.ifaces.MemberDAO;
 import com.training.utils.ConnectionUtility;
+import com.training.utils.PenaltyComparator;
 
 public class MemberDAOImpl implements MemberDAO<Member> {
 	private ArrayList<Member> memberList=null;
@@ -252,6 +254,7 @@ public class MemberDAOImpl implements MemberDAO<Member> {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		Collections.sort(penaltyList, new PenaltyComparator());
 		return penaltyList;
 	}
 	
